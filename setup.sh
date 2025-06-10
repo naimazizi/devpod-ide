@@ -3,10 +3,7 @@ packages=(
 	build-essential
 	fd-find
 	ripgrep
-	gitui
 	fish
-	pyenv
-	neovim
 	cargo
 )
 
@@ -15,6 +12,9 @@ for package in "${packages[@]}"; do
 	echo "Installing $package..."
 	sudo apt install -y "$package"
 done
+
+curl -fsSL https://pyenv.run | bash
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
 mkdir -p ~/.config
 cd ~/.config
