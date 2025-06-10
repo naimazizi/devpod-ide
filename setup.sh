@@ -1,24 +1,27 @@
 #!/bin/bash
-export XDG_CONFIG_HOME="$HOME"/.config
-mkdir -p "$XDG_CONFIG_HOME"
-
-git submodule update
-
-ln -sf "$PWD/.config/nvim" "$XDG_CONFIG_HOME/nvim"
-ln -sf "$PWD/.config/fish" "$XDG_CONFIG_HOME/fish"
-
 packages=(
+	build-essential
 	fd-find
 	ripgrep
 	gitui
 	fish
 	pyenv
 	neovim
+	cargo
 )
 
+sudo apt update -y
 for package in "${packages[@]}"; do
 	echo "Installing $package..."
-	apt install -y "$package"
+	sudo apt install -y "$package"
 done
 
+git submodule update
+
+mkdir -p ~/.config
+cd ~/dotconfig
+stow --target ~/.config . -v
+
 echo "All packages installed successfully."
+
+chsh -s $(which fish)
