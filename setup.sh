@@ -8,7 +8,6 @@ packages=(
 	pyenv
 	neovim
 	cargo
-	stow
 )
 
 sudo apt update -y
@@ -17,11 +16,9 @@ for package in "${packages[@]}"; do
 	sudo apt install -y "$package"
 done
 
-git submodule update
-
 mkdir -p ~/.config
-cd dotconfig
-stow --target ~/.config . -v
+cd ~/.config
+git clone https://github.com/naimazizi/dotconfig .
 
 echo "All packages installed successfully."
 
