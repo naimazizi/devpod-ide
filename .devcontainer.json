@@ -1,8 +1,9 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/base",
+	"image": "mcr.microsoft.com/devcontainers/python:3.12",
 	"features": {
 		"ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
 			"version": "stable"
-		}
+		},
+		"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {}
 	}
 }
