@@ -8,16 +8,17 @@ ln -sf "$PWD/.config/nvim" "$XDG_CONFIG_HOME/nvim"
 ln -sf "$PWD/.config/fish" "$XDG_CONFIG_HOME/fish"
 
 packages=(
-	fd
+	fd-find
 	ripgrep
 	gitui
 	fish
 	pyenv
+	neovim
 )
 
 for package in "${packages[@]}"; do
 	echo "Installing $package..."
-	pacman -Sy --noconfirm "$package"
+	apt install -y "$package"
 done
 
 echo "All packages installed successfully."
