@@ -1,0 +1,8 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/base",
+	"features": {
+		"ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
+			"version": "stable"
+		}
+	}
+}
