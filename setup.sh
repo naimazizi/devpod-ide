@@ -3,6 +3,7 @@ packages=(
 	build-essential
 	fish
 	cargo
+	fzf
 )
 
 brew_packages=(
@@ -16,6 +17,7 @@ brew_packages=(
 	fzf
 	node
 	luarocks
+	r
 )
 
 sudo apt update -y
@@ -30,6 +32,10 @@ for package in "${brew_packages[@]}"; do
 	echo "Installing $package..."
 	/home/linuxbrew/.linuxbrew/bin/brew install "$package"
 done
+
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt update && sudo apt install google-cloud-cli
 
 mkdir -p ~/.config
 cd ~/.config
