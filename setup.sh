@@ -12,11 +12,12 @@ packages=(
 	ripgrep
 	gitui
 	fish
+	pyenv
 )
 
 for package in "${packages[@]}"; do
 	echo "Installing $package..."
-	brew install "$package"
+	pacman -Sy --noconfirm "$package"
 done
 
 echo "All packages installed successfully."

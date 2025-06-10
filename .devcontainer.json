@@ -1,5 +1,5 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/python:3.12",
+	"image": "ghcr.io/bartventer/devcontainer-images/base-archlinux",
 	"features": {
 		"ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
 			"version": "stable"
