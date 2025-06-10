@@ -14,6 +14,8 @@ brew_packages=(
 	fd
 	ripgrep
 	fzf
+	node
+	luarocks
 )
 
 sudo apt update -y
