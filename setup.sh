@@ -14,10 +14,8 @@ brew_packages=(
 	gitui
 	fd
 	ripgrep
-	fzf
 	node
 	luarocks
-	r
 )
 
 sudo apt update -y
